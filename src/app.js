@@ -2,6 +2,8 @@ const express = require("express");
 //------//
 const mongoose = require("mongoose");
 //------//
+const cors = require("cors");
+//------//
 const { mongoUri, dbName } = require("./config");
 //------//
 
@@ -15,6 +17,10 @@ const createUsersRouter = require("./routes/users.router");
 const app = express();
 
 app.use(express.json());
+
+//------//
+app.use(cors({ origin: "http://127.0.0.1:5500" }));
+//------//
 app.use(configureCustomResponses);
 
 //-------//

@@ -8,7 +8,7 @@ module.exports = {
   getCarts: async (_, res) => {
     // res.send({ status: "sucess", payload: "getCarts" });
 
-    const carts = await cartsDAO.getCartById();
+    const carts = await cartsDAO.getCarts();
     if (!carts) {
       return res.sendError("Something went wrong!");
     }
